@@ -127,6 +127,7 @@ export interface Trade {
   takeProfit: number;
   lots: number;
   profit?: number;
+  pnl?: number;
   status: TradeStatus;
   openedAt: string;
   closedAt?: string;
