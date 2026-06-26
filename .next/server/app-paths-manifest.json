@@ -1,8 +1,6 @@
 {
-  "/portfolio/page": "app/portfolio/page.js",
-  "/scanner/page": "app/scanner/page.js",
-  "/risk/page": "app/risk/page.js",
-  "/page": "app/page.js",
   "/analyzer/page": "app/analyzer/page.js",
-  "/signals/page": "app/signals/page.js"
+  "/scanner/page": "app/scanner/page.js",
+  "/signals/page": "app/signals/page.js",
+  "/page": "app/page.js"
 }

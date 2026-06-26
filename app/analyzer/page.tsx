@@ -8,7 +8,7 @@ const TFS = [{v:"M1",l:"1m"},{v:"M5",l:"5m"},{v:"M15",l:"15m"},{v:"M30",l:"30m"}
 const TF_MAP: Record<string,string> = { M1:"1",M5:"5",M15:"15",M30:"30",H1:"60",H4:"240",D1:"D" };
 
 export default function Analyzer() {
-  const [symbol, setSymbol] = useState(ASSETS[0]);
+  const [symbol, setSymbol] = useState<typeof ASSETS[number]>(ASSETS[0]);
   const [tf, setTf]         = useState("M15");
   const [tab, setTab]       = useState<"indicators"|"smc"|"news">("indicators");
   const [loading, setLoading]   = useState(false);
