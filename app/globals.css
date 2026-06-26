@@ -1,0 +1,83 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  height: 100%;
+  background: #131722;
+  color: #d1d4dc;
+  font-family: -apple-system, BlinkMacSystemFont, "Trebuchet MS", Roboto, Ubuntu, sans-serif;
+  font-size: 13px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: inherit; text-decoration: none; }
+
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: #131722; }
+::-webkit-scrollbar-thumb { background: #363a45; border-radius: 2px; }
+::-webkit-scrollbar-thumb:hover { background: #434651; }
+
+.tv-panel { background: #1e222d; border: 1px solid #2a2e39; }
+.tv-card  { background: #2a2e39; border: 1px solid #363a45; }
+
+.tv-tab {
+  padding: 6px 14px;
+  color: #787b86;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 500;
+  transition: color 0.15s;
+  white-space: nowrap;
+}
+.tv-tab:hover { color: #d1d4dc; }
+.tv-tab.active { color: #d1d4dc; border-bottom-color: #2196f3; }
+
+.tv-btn {
+  background: #2a2e39;
+  border: 1px solid #363a45;
+  color: #d1d4dc;
+  padding: 4px 10px;
+  border-radius: 3px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: background 0.15s;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+.tv-btn:hover { background: #363a45; }
+.tv-btn.active { background: #1565c0; border-color: #2196f3; color: #fff; }
+
+.tv-input {
+  background: #2a2e39;
+  border: 1px solid #363a45;
+  color: #d1d4dc;
+  padding: 5px 8px;
+  border-radius: 3px;
+  font-size: 12px;
+  outline: none;
+  width: 100%;
+  transition: border-color 0.15s;
+}
+.tv-input:focus { border-color: #2196f3; }
+.tv-select { appearance: none; cursor: pointer; }
+
+.badge-buy     { background: rgba(38,166,154,.15); color: #26a69a; padding: 2px 7px; border-radius: 3px; font-size: 11px; font-weight: 600; letter-spacing: .3px; }
+.badge-sell    { background: rgba(239,83,80,.15);  color: #ef5350; padding: 2px 7px; border-radius: 3px; font-size: 11px; font-weight: 600; letter-spacing: .3px; }
+.badge-neutral { background: rgba(120,123,134,.15);color: #787b86; padding: 2px 7px; border-radius: 3px; font-size: 11px; font-weight: 600; }
+
+.text-green  { color: #26a69a; }
+.text-red    { color: #ef5350; }
+.text-blue   { color: #2196f3; }
+.text-yellow { color: #f9a825; }
+.text-muted  { color: #787b86; }
+.text-dim    { color: #434651; }
+
+.ticker-content { display: flex; animation: ticker 45s linear infinite; white-space: nowrap; }
+
+@keyframes ticker { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+@keyframes blink  { 0%,100% { opacity: 1; } 50% { opacity: .2; } }
+@keyframes scan   { 0%,100% { opacity: .5; } 50% { opacity: 1; } }
+
+.divider { border: none; border-top: 1px solid #2a2e39; }
