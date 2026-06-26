@@ -274,7 +274,7 @@ export default function Analyzer() {
                         <span style={{ fontSize:12, fontFamily:"monospace", color:"#f9a825", fontWeight:700 }}>{lv.price}</span>
                       </div>
                       <div style={{ display:"flex", gap:8, fontSize:11, color:"#787b86" }}>
-                        <span style={{ color:lv.direction==="BUY"||lv.direction==="Bullish"?"#26a69a":"#ef5350" }}>{lv.direction}</span>
+                        <span style={{ color:(lv.direction as string)==="BUY"||(lv.direction as string)==="Bullish"?"#26a69a":"#ef5350" }}>{lv.direction}</span>
                         <span>Strength: {lv.strength}</span>
                         {lv.tested && <span style={{ color:"#f9a825" }}>● Tested</span>}
                       </div>
