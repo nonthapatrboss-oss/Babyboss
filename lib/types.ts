@@ -84,6 +84,7 @@ export interface SMCLevel {
   strength: "Strong" | "Medium" | "Weak";
   status: "Active" | "Mitigated" | "Broken";
   timeframe: TimeFrame;
+  tested?: boolean;
 }
 
 export interface SMCAnalysis {
