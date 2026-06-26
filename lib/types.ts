@@ -149,6 +149,10 @@ export interface PerformanceStats {
   profitFactor: number;
   consecutiveWins: number;
   consecutiveLosses: number;
+  winningTrades: number;
+  losingTrades: number;
+  bestTrade: number;
+  worstTrade: number;
 }
 
 export interface RiskSettings {

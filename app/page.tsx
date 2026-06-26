@@ -112,7 +112,7 @@ export default function Dashboard() {
                       <td style={{ padding:"5px 10px", fontWeight:600, color:"#d1d4dc" }}>{t.symbol}</td>
                       <td style={{ padding:"5px 10px" }}><span className={t.direction==="BUY"?"badge-buy":"badge-sell"}>{t.direction}</span></td>
                       <td style={{ padding:"5px 10px", fontFamily:"monospace", color:"#787b86" }}>{t.entry}</td>
-                      <td style={{ padding:"5px 10px", fontFamily:"monospace", fontWeight:600, color:t.pnl>0?"#26a69a":"#ef5350" }}>{t.pnl>0?"+":""}{t.pnl}</td>
+                      <td style={{ padding:"5px 10px", fontFamily:"monospace", fontWeight:600, color:(t.pnl??0)>0?"#26a69a":"#ef5350" }}>{(t.pnl??0)>0?"+":""}{t.pnl??0}</td>
                       <td style={{ padding:"5px 10px", fontSize:10, color:t.status==="Active"?"#26a69a":"#434651" }}>{t.status}</td>
                     </tr>
                   ))}

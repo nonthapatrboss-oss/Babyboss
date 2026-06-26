@@ -1,6 +1,6 @@
 {
-  "/analyzer/page": "app/analyzer/page.js",
-  "/signals/page": "app/signals/page.js",
   "/page": "app/page.js",
-  "/scanner/page": "app/scanner/page.js"
+  "/scanner/page": "app/scanner/page.js",
+  "/analyzer/page": "app/analyzer/page.js",
+  "/signals/page": "app/signals/page.js"
 }
