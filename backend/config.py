@@ -5,12 +5,10 @@ class Settings(BaseSettings):
     # App
     APP_NAME: str = "AI Trading Platform"
     DEBUG: bool = False
-    CORS_ORIGINS: List[str] = [
-        "http://localhost:3000",
-        "https://babyboss-topaz.vercel.app",
-    ]
+    # Allow all origins — tighten after confirmed working
+    CORS_ORIGINS: List[str] = ["*"]
 
-    # Database — SQLite by default (no external DB needed)
+    # Database — SQLite by default
     DATABASE_URL: str = "sqlite+aiosqlite:///trading.db"
 
     # LINE Messaging API
