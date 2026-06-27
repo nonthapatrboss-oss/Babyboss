@@ -20,10 +20,9 @@ feedparser==6.0.11
 playwright==1.44.0
 
 # Database
-asyncpg==0.29.0
+aiosqlite==0.20.0
 sqlalchemy[asyncio]==2.0.31
 alembic==1.13.1
-redis==5.0.7
 
 # Scheduler
 apscheduler==3.10.4
