@@ -1,0 +1,39 @@
+fastapi==0.111.0
+uvicorn[standard]==0.30.1
+websockets==12.0
+pydantic==2.7.4
+pydantic-settings==2.3.1
+
+# Data & Analysis
+pandas==2.2.2
+numpy==1.26.4
+ta==0.11.0
+pandas-ta==0.3.14b0
+scipy==1.13.1
+
+# HTTP / Scraping
+httpx==0.27.0
+aiohttp==3.9.5
+beautifulsoup4==4.12.3
+lxml==5.2.2
+feedparser==6.0.11
+playwright==1.44.0
+
+# Database
+asyncpg==0.29.0
+sqlalchemy[asyncio]==2.0.31
+alembic==1.13.1
+redis==5.0.7
+
+# Scheduler
+apscheduler==3.10.4
+
+# Notifications
+line-bot-sdk==3.11.0
+python-telegram-bot==21.3
+
+# Misc
+python-dotenv==1.0.1
+python-multipart==0.0.9
+orjson==3.10.5
+structlog==24.2.0
