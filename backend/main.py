@@ -46,7 +46,9 @@ ws_clients: List[WebSocket] = []  # Connected WebSocket clients
 async def lifespan(app: FastAPI):
     logger.info("Starting AI Trading Platform backend...")
     await db.connect()
-    await news_scraper.start()
+
+    # Start news scraper in background — don't block server startup
+    asyncio.create_task(news_scraper.start())
 
     # Schedule recurring jobs
     scheduler.add_job(run_scanner, "interval", seconds=60, id="scanner")
@@ -127,7 +129,7 @@ async def broadcast_signal(signal: dict):
 # ── Scanner Job ────────────────────────────────────────────
 SCAN_SYMBOLS = [
     "XAUUSD", "EURUSD", "GBPUSD", "BTCUSD", "USDJPY",
-]  # Free tier: 8 req/min — XAGUSD requires paid plan
+]
 
 async def run_scanner():
     """Run full AI scan across all instruments. Called every 60s."""
@@ -140,7 +142,6 @@ async def run_scanner():
                 results.append(signal)
                 await db.save_signal(signal)
 
-                # Send notifications
                 if signal["confidence"] >= 87:
                     msg = format_line_message(signal)
                     await line_notifier.send(msg)
@@ -307,7 +308,6 @@ async def websocket_endpoint(ws: WebSocket):
     try:
         while True:
             data = await ws.receive_text()
-            # Handle client messages (e.g., subscribe to symbol)
             msg = json.loads(data)
             if msg.get("type") == "subscribe":
                 symbol = msg.get("symbol", "XAUUSD")

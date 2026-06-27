@@ -5,27 +5,29 @@ class Settings(BaseSettings):
     # App
     APP_NAME: str = "AI Trading Platform"
     DEBUG: bool = False
-    CORS_ORIGINS: List[str] = ["http://localhost:3000", "https://your-domain.vercel.app"]
+    CORS_ORIGINS: List[str] = [
+        "http://localhost:3000",
+        "https://babyboss-topaz.vercel.app",
+    ]
 
-    # Database
-    DATABASE_URL: str = "postgresql+asyncpg://user:pass@localhost:5432/trading"
-    REDIS_URL: str = "redis://localhost:6379"
+    # Database — SQLite by default (no external DB needed)
+    DATABASE_URL: str = "sqlite+aiosqlite:///trading.db"
 
     # LINE Messaging API
     LINE_CHANNEL_ACCESS_TOKEN: str = ""
-    LINE_USER_ID: str = ""   # Your LINE user ID to push to
+    LINE_USER_ID: str = ""
 
     # Telegram
     TELEGRAM_BOT_TOKEN: str = ""
     TELEGRAM_CHAT_ID: str = ""
 
     # Market Data APIs
-    ALPHA_VANTAGE_KEY: str = ""      # Free: 25 req/day — or use paid tier
-    TWELVE_DATA_KEY: str = ""         # 800 req/day free — recommended
-    POLYGON_API_KEY: str = ""         # Stocks & crypto
-    COINMARKETCAP_KEY: str = ""       # Crypto data
+    ALPHA_VANTAGE_KEY: str = ""
+    TWELVE_DATA_KEY: str = ""
+    POLYGON_API_KEY: str = ""
+    COINMARKETCAP_KEY: str = ""
 
-    # AI (Optional — for narrative generation)
+    # AI (Optional)
     OPENAI_API_KEY: str = ""
 
     # Signal Settings
